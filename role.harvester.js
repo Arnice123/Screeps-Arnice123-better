@@ -8,7 +8,7 @@ var roleHarvester = {
                 if (!AreThereCreepsNearPos1(creep) || !AreThereCreepsNearPos2(creep) || !AreThereCreepsNearPos3(creep))
                 {
                     creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-                    
+
                 }
                 else if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
                 {
@@ -28,22 +28,20 @@ var roleHarvester = {
                 {
                     let dist = creep.pos.getRangeTo(targets[locations])
                     var chosenDist;
-                    
+
                     if (chosenDist == null)
                     {
                         chosenDist = targets[0]
                     }
-                    
+
                     if (dist <= chosenDist && chosenDist != null)
                     {
-                        
+                        chosenDist = targets[locations]
                     }
-                  
-                    
                 }
-                
-                if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+
+                if(creep.transfer(chosenDist, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(chosenDist, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
         }
@@ -95,28 +93,23 @@ function AreThereCreepsNearPos3(creep)
 module.exports = roleHarvester;
 
 /*
-var roleHarvester = {
+for (var locations in targets)
+                {
+                    let dist = creep.pos.getRangeTo(targets[locations])
+                    var chosenDist;
 
-    /** @param {Creep} creep **//*
-    run: function(creep) {
-	    if(creep.store.getFreeCapacity() > 0) {
-            var sources = creep.room.find(FIND_SOURCES);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-            }
-        }
-        else {
-            var targets = creep.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => {
-                        return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) &&
-                            structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
+                    if (chosenDist == null)
+                    {
+                        chosenDist = targets[0]
                     }
-            });
-            if(targets.length > 0) {
-                if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+
+                    if (dist <= chosenDist && chosenDist != null)
+                    {
+                        chosenDist = targets[locations]
+                    }
                 }
-            }
-        }
-	}
-};*/
+
+                if(creep.transfer(chosenDist, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(chosenDist, {visualizePathStyle: {stroke: '#ffffff'}});
+                }
+*/
