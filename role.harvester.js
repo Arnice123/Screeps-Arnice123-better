@@ -8,14 +8,13 @@ var roleHarvester = {
                 if (!AreThereCreepsNearPos1(creep) || !AreThereCreepsNearPos2(creep) || !AreThereCreepsNearPos3(creep))
                 {
                     creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-                    console.log("this is seen") // is not shown even though there was an open spot
+                    
+                }
+                else if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
+                {
+                    creep.moveTo(sources[1], {visualizePathStyle: {stroke: '##0000FF'}});
                 }
             }
-            else if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
-            {
-                 creep.moveTo(sources[1], {visualizePathStyle: {stroke: '##0000FF'}});
-            }
-
         }
         else {
             var targets = creep.room.find(FIND_STRUCTURES, {
@@ -25,6 +24,11 @@ var roleHarvester = {
                     }
             });
             if(targets.length > 0) {
+                for (var locations in targets)
+                {
+                    let dist = this.pos - targets[locations].pos
+                }
+                
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
