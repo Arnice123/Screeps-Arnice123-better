@@ -8,6 +8,7 @@ var roleHarvester = {
                 if (!AreThereCreepsNearPos1(creep) || !AreThereCreepsNearPos1(creep) || !AreThereCreepsNearPos1(creep))
                 {
                     creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+                    console.log("this is seen") // is not shown even though there was an open spot
                 }
             }
             else if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)

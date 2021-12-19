@@ -27,7 +27,7 @@ module.exports.loop = function () {
     if(upgraders.length < 2) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,MOVE,WORK], newName, 
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,MOVE,MOVE,WORK], newName, 
             {memory: {role: 'upgrader'}});
     }
     
