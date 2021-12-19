@@ -26,7 +26,20 @@ var roleHarvester = {
             if(targets.length > 0) {
                 for (var locations in targets)
                 {
-                    let dist = this.pos - targets[locations].pos
+                    let dist = creep.pos.getRangeTo(targets[locations])
+                    var chosenDist;
+                    
+                    if (chosenDist == null)
+                    {
+                        chosenDist = targets[0]
+                    }
+                    
+                    if (dist <= chosenDist && chosenDist != null)
+                    {
+                        
+                    }
+                  
+                    
                 }
                 
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
