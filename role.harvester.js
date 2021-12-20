@@ -3,7 +3,7 @@ var roleHarvester = {
     /** @param {Creep} creep **/
     run: function (creep) {
         if (creep.store.getFreeCapacity() > 0) {
-            var sources = creep.room.find(FIND_SOURCES);
+            var sources = creep.room.find(FIND_SOURCES || FIND_DROPPED_RESOURCES);
             if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
                 if (!AreThereCreepsNearPos1(creep) || !AreThereCreepsNearPos2(creep) || !AreThereCreepsNearPos3(creep)) {
                     creep.moveTo(sources[0], { visualizePathStyle: { stroke: '#ffaa00' } });
