@@ -17,7 +17,7 @@ module.exports.loop = function () {
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,MOVE,CARRY], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,MOVE,MOVE,CARRY], newName,
             {memory: {role: 'harvester'}});
             
         if (harvesters.length == 0)
@@ -33,7 +33,7 @@ module.exports.loop = function () {
     if(upgraders.length < 2) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,WORK,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader'}});
             
         if (upgraders.length == 0)
@@ -49,7 +49,7 @@ module.exports.loop = function () {
     if(builders.length < 2) {
         var newName = 'Builders' + Game.time;
         console.log('Spawning new builders: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,CARRY,MOVE,MOVE], newName,
             {memory: {role: 'builder'}});
             
         if (builders.length == 0)
