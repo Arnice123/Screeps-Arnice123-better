@@ -70,7 +70,7 @@ module.exports.loop = function () {
         }
     }
 
-    // displaying what is spawning
+    // displaying what type of creep is spawning
     if(Game.spawns['Arnice123 First'].spawning) {
         var spawningCreep = Game.creeps[Game.spawns['Arnice123 First'].spawning.name];
         Game.spawns['Arnice123 First'].room.visual.text(
@@ -80,6 +80,7 @@ module.exports.loop = function () {
             {align: 'left', opacity: 0.8});
     }
 
+    //runs the specific creep roles
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -93,10 +94,10 @@ module.exports.loop = function () {
         }
     }
 /*
-     // Modulo - 10 ticks
+    //how often FindEmptySites runs
     const waitTime = 10;
 
-    // If the remainder of dividing the current game time by some value is 0, then its been some value of ticks
+    // If the remainder of dividing the current game time by some value is 0, then its been some 10 ticks
     if(Game.time%waitTime == 0){
         console.log("hi")
         FindEmptySites()
