@@ -3,19 +3,19 @@
 */
 
     // create a path from the spawn to the energy sources
-    const path1 = Game.spawns[0].pos.findPathTo(Game.flags.SOURCE1.pos)
-    const path2 = Game.spawns[0].pos.findPathTo(Game.flags.SOURCE2.pos)
+    const path1 = Game.spawns['Arnice123 First'].pos.findPathTo(Game.flags.SOURCE1.pos)
+    const path2 = Game.spawns['Arnice123 First'].pos.findPathTo(Game.flags.SOURCE2.pos)
 
     // Serilizing the paths
     Memory.path1 = Game.room.serializePath(path1)
-    Memory.path2 = Game.room.serializePath(path2)    
+    Memory.path2 = Game.room.serializePath(path2)
 
 // function that will be called every 25 tics in order to find missing paths
 function FindEmptySites(creep)
 {
     // Getting the room terrain
     const terrain = Game.rooms['E32N8'].getTerrain()
-    
+
     // for each position in the path there should be a road
     for (var pos in Memory.path1)
     {
@@ -46,8 +46,5 @@ function FindEmptySites(creep)
     }
 
 }
-
-
-
 
 module.exports = FindEmptySites()
