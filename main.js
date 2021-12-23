@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
+//FindEmptySites = require("constructionManager");
 
 module.exports.loop = function () {
 
@@ -17,7 +18,7 @@ module.exports.loop = function () {
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,MOVE,MOVE,CARRY], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,CARRY,CARRY], newName,
             {memory: {role: 'harvester'}});
             
         if (harvesters.length == 0)
@@ -49,7 +50,7 @@ module.exports.loop = function () {
     if(builders.length < 2) {
         var newName = 'Builders' + Game.time;
         console.log('Spawning new builders: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,CARRY,MOVE,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,WORK,MOVE], newName,
             {memory: {role: 'builder'}});
             
         if (builders.length == 0)
@@ -80,4 +81,14 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
     }
+    /*
+     // Modulo - 10 ticks
+    const waitTime = 10; 
+    
+    // If the remainder of dividing the current game time by some value is 0, then its been some value of ticks
+    if(Game.time%waitTime == 0){
+        console.log("hi")
+        FindEmptySites()
+    }
+    */
 }
