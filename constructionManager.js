@@ -2,9 +2,6 @@
  * This code is here to automatically place roads so the travel will allways be optimized
 */
 
-    //The spawn
-    var spawn = STRUCTURE_SPAWN
-
     // create a path from the spawn to the energy sources
     const path1 = Game.spawns[0].pos.findPathTo(Game.flags.SOURCE1.pos)
     const path2 = Game.spawns[0].pos.findPathTo(Game.flags.SOURCE2.pos)
