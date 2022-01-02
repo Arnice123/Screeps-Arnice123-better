@@ -21,7 +21,7 @@ module.exports.loop = function () {
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,CARRY,CARRY], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,CARRY], newName,
             {memory: {role: 'harvester'}});
 
         // if the harvesters didn't farm enough energy use this so there will allways be harvesters
@@ -40,7 +40,7 @@ module.exports.loop = function () {
     if(upgraders.length < 2) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader'}});
 
         // if the harvesters didn't farm enough energy use this so there will allways be some upgrades even if they are not good
@@ -101,6 +101,6 @@ module.exports.loop = function () {
     if(Game.time%waitTime == 0){
         console.log("hi")
         FindEmptySites()
-    }
-*/
+    }*/
+
 }
