@@ -1,10 +1,9 @@
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
-//FindEmptySites = require("constructionManager");
+FindEmptySites = require("constructionManager");
 
 module.exports.loop = function () {
-
 
    for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
@@ -93,7 +92,7 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
     }
-/*
+
     //how often FindEmptySites runs
     const waitTime = 10;
 
@@ -101,6 +100,6 @@ module.exports.loop = function () {
     if(Game.time%waitTime == 0){
         console.log("hi")
         FindEmptySites()
-    }*/
+    }
 
 }
