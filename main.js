@@ -1,7 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
-FindEmptySites = require("constructionManager");
+function FindEmptySites = require("constructionManager").FindEmptySites();
 
 module.exports.loop = function () {
 
