@@ -94,7 +94,7 @@ module.exports.loop = function () {
     }
 
     //how often FindEmptySites runs
-    const waitTime = 10;
+    const waitTime = 25;
 
     // If the remainder of dividing the current game time by some value is 0, then its been some 10 ticks
     if(Game.time%waitTime == 0){
