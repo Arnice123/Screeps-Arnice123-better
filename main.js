@@ -1,7 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
-function FindEmptySites = require("constructionManager").FindEmptySites();
+const findEmptySites = require('constructionManager')
 
 module.exports.loop = function () {
 
@@ -20,7 +20,7 @@ module.exports.loop = function () {
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,CARRY], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,MOVE,,CARRY,CARRY], newName,
             {memory: {role: 'harvester'}});
 
         // if the harvesters didn't farm enough energy use this so there will allways be harvesters
@@ -39,7 +39,7 @@ module.exports.loop = function () {
     if(upgraders.length < 2) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,CARRY,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader'}});
 
         // if the harvesters didn't farm enough energy use this so there will allways be some upgrades even if they are not good
@@ -58,7 +58,7 @@ module.exports.loop = function () {
     if(builders.length < 2) {
         var newName = 'Builders' + Game.time;
         console.log('Spawning new builders: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,WORK,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,CARRY,CARRY,WORK,MOVE], newName,
             {memory: {role: 'builder'}});
 
         // if the harvesters didn't farm enough energy use this so there will not be a lack of creeps
@@ -98,8 +98,8 @@ module.exports.loop = function () {
 
     // If the remainder of dividing the current game time by some value is 0, then its been some 10 ticks
     if(Game.time%waitTime == 0){
-        console.log("hi")
-        FindEmptySites()
+        console.log('this runs');
+        findEmptySites
     }
 
 }

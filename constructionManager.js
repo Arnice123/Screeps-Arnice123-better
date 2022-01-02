@@ -1,8 +1,7 @@
+
 /*
  * This code is here to automatically place roads so the travel will allways be optimized
 */
-
-
 
 // function that will be called every 25 tics in order to find missing paths
 function FindEmptySites()
