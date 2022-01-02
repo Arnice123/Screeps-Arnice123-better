@@ -33,7 +33,6 @@ function FindEmptySites()
             // if there is floor or a swamp place a road on that position
             case TERRAIN_MASK_SWAMP:
                 room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
-                
                 break
             case 0:
                 room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
