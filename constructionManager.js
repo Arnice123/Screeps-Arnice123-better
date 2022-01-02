@@ -3,7 +3,7 @@
  * This code is here to automatically place roads so the travel will allways be optimized
 */
 
-// function that will be called every 25 tics in order to find missing paths
+// function that will be called every 10 tics in order to find missing paths
 function FindEmptySites()
 {
     //creating an instance of the room
@@ -21,6 +21,13 @@ function FindEmptySites()
     {
         return
     }
+    
+    for(var po in path1)
+    {
+        console.log('this runssssssssssssssssssssss')
+        room.visual.circle(path1[po].pos)
+    } // what I am trying to do but for some reason it doesn't run
+    
 
       // Getting the room terrain
     var terrain = Game.rooms[myHardcodedRoomName].getTerrain()
@@ -32,10 +39,13 @@ function FindEmptySites()
        {
             // if there is floor or a swamp place a road on that position
             case TERRAIN_MASK_SWAMP:
-                room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
+                const placeConstructionSiteResult11 = room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
+                console.log(placeConstructionSiteResult11) // returns -10 (invalid location)
+                //room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
                 break
             case 0:
-                room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
+                const placeConstructionSiteResult12 = room.createConstructionSite(path1[pos].pos, STRUCTURE_ROAD)
+                 console.log(placeConstructionSiteResult12)
                 break
        }
     }
@@ -46,10 +56,14 @@ function FindEmptySites()
        switch(terrain.get(path2[pos].x, path2[pos].y))
        {
             case TERRAIN_MASK_SWAMP:
-                room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
+                const placeConstructionSiteResult21 = room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
+                 console.log(placeConstructionSiteResult21)
+                //room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
                 break
             case 0:
-                room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
+                const placeConstructionSiteResult22 = room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
+                 console.log(placeConstructionSiteResult22)
+                //room.createConstructionSite(path2[pos].pos, STRUCTURE_ROAD)
                 break
        }
     }

@@ -39,7 +39,7 @@ module.exports.loop = function () {
     if(upgraders.length < 2) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,WORK,CARRY,MOVE], newName,
+        Game.spawns['Arnice123 First'].spawnCreep([WORK,WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader'}});
 
         // if the harvesters didn't farm enough energy use this so there will allways be some upgrades even if they are not good
