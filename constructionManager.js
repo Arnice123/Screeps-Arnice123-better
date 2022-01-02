@@ -13,6 +13,7 @@ function FindEmptySites()
 {
     const constructSitesLength = Game.spawns['Arnice123 First'].room.find(FIND_MY_STRUCTURES, {
     filter: { structureType: FIND_MY_CONSTRUCTION_SITES }})
+
     
     if (constructSitesLength.length >= 100) 
     {
